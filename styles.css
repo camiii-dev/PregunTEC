@@ -1,5 +1,12 @@
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     /* ocultar sólo el scroll horizontal; mantener control sobre el eje vertical
@@ -24,15 +31,23 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    z-index: 0; /* detrás del .container (que tiene z-index:10) */
-    top: 0; /* punto de referencia: la animación usa transform con vh */
+    z-index: 0;
+    /* detrás del .container (que tiene z-index:10) */
+    top: 0;
+    /* punto de referencia: la animación usa transform con vh */
     pointer-events: none;
 }
 
 @keyframes float {
+
     /* usar unidades vh para que el recorrido dependa del alto del viewport */
-    from { transform: translateY(100vh) rotate(0deg); }
-    to { transform: translateY(-120vh) rotate(360deg); }
+    from {
+        transform: translateY(100vh) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+    }
 }
 
 /* === CONTENEDOR PRINCIPAL === */
@@ -51,8 +66,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 h1 {
@@ -111,13 +133,11 @@ h1 {
     border: none;
     border-radius: 10px;
     font-size: 1em;
-    margin-top: 15px;
+    margin: 15px auto 0;
+    /* centrar horizontalmente debajo de las opciones */
     cursor: pointer;
-    /* visibilidad controlada por JS */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.18s ease, visibility 0.18s ease;
-    display: inline-block;
+    display: none;
+    transition: 0.3s;
 }
 
 #next-btn:hover {
@@ -137,7 +157,8 @@ h1 {
     animation: fadeIn 1s ease;
 }
 
-#start-btn, #restart-btn {
+#start-btn,
+#restart-btn {
     background: #00ffff;
     color: #000000;
     border: none;
@@ -149,7 +170,8 @@ h1 {
     transition: 0.3s;
 }
 
-#start-btn:hover, #restart-btn:hover {
+#start-btn:hover,
+#restart-btn:hover {
     background: #00ffcc;
 }
 
@@ -160,6 +182,13 @@ h1 {
 }
 
 @keyframes confeti {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(300px); opacity: 0; }
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
 }
